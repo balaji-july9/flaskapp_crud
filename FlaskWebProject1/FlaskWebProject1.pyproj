@@ -44,8 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FlaskWebProject1\static\signup.css" />
+    <Content Include="FlaskWebProject1\templates\error.html" />
     <Content Include="FlaskWebProject1\templates\signin.html" />
     <Content Include="FlaskWebProject1\templates\signup.html" />
+    <Content Include="FlaskWebProject1\templates\userHome.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="requirements.txt" />
     <Content Include="FlaskWebProject1\static\content\bootstrap.css" />
     <Content Include="FlaskWebProject1\static\content\bootstrap.min.css" />
