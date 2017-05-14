@@ -93,13 +93,11 @@ def validateLogin():
  
         con = mysql.connect()
         cursor = con.cursor()
-        #sql=cursor.execute("SELECT * FROM tbl_user WHERE user_username = '%s'" % _username)
-        #cursor.execute('sp_validateLogin',(_username,))
         cursor.callproc('sp_validateLogin',(_username,)) 
-        data = cursor.fetchone()
- 
- 
- 
+        data = cursor._rows
+        #data = cursor.fetchall()
+        
+         
  
         if len(data) > 0:
             if check_password_hash(str(data[0][3]),_password):
@@ -123,3 +121,8 @@ def userHome():
         return render_template('userHome.html')
     else:
         return render_template('error.html',error = 'Unauthorized Access')
+
+@app.route('/logout')
+def logout():
+    session.pop('user',None)
+    return redirect('/')
