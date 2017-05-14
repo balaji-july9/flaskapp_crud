@@ -83,10 +83,9 @@ def showSignin():
 @app.route('/validateLogin',methods=['POST'])
 def validateLogin():
     try:
-        #_username = request.form['inputEmail']
-        #_password = request.form['inputPassword']
-        _username = "gaurav"
-        _password = "gaurav"
+        _username = request.form['inputEmail']
+        _password = request.form['inputPassword']
+
  
  
         # connect to mysql
